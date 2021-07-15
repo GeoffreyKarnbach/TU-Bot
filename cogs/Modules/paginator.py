@@ -50,7 +50,6 @@ async def paginator_edit(event, client):
             elif str(event.emoji) == "↪":
                 to_load = info[1]-1
 
-            #TODO: Update DB
             cusor.execute(f"UPDATE paginator SET page = {to_load} WHERE messageId = {event.message_id}")
             db.commit()
 
