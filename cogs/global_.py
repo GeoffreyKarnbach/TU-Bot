@@ -17,11 +17,11 @@ class Global(commands.Cog):
     async def on_member_join(self, member):
         pass
 
-    @commands.command()
+    @commands.command(brief='Command to get latency of bot.')
     async def ping(self,ctx):
         await ctx.send("Pong!")
         
-    @commands.command()
+    @commands.command(brief='Command to set prefix of bot.')
     async def prefix(self, ctx, *, prefix = "."):
         with open('Configuration/server_setting.json', "r") as json_file:
             data = json.load(json_file)
@@ -33,7 +33,7 @@ class Global(commands.Cog):
         await ctx.send(f"New prefix will be {prefix}")
         
 
-    @commands.command(aliases=['s'])
+    @commands.command(aliases=['s'], brief='Command to shutdown the bot.')
     async def shutdown(self,ctx):
         if ctx.message.author.id == 450259740153479189:
             await ctx.send("Bot shuting down.")

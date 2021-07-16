@@ -36,7 +36,7 @@ async def get_pre(bot, message):
 
 client = commands.Bot(command_prefix = get_pre)
 
-@client.command()
+@client.command(brief='Command to reload all cogs (For Hotfixes).')
 async def reload_cogs(ctx):
     unload_all()
     load_all()
