@@ -47,4 +47,6 @@ async def reload_cogs(ctx):
 load_all()
 
 ######################################################################   RUN BOT WITH TOKEN    ################################################
-client.run(readJSONFile('Configuration', 'token.json')['token'])
+with open("token.txt","r") as file:
+    client.run(file.readline())
+
