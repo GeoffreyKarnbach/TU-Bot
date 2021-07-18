@@ -36,7 +36,7 @@ async def get_pre(bot, message):
 
 client = commands.Bot(command_prefix = get_pre)
 
-@client.command()
+@client.command(brief='Command to reload all cogs (For Hotfixes).')
 async def reload_cogs(ctx):
     unload_all()
     load_all()
@@ -47,4 +47,6 @@ async def reload_cogs(ctx):
 load_all()
 
 ######################################################################   RUN BOT WITH TOKEN    ################################################
-client.run(readJSONFile('Configuration', 'token.json')['token'])
+with open("token.txt","r") as file:
+    client.run(file.readline())
+
